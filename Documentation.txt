@@ -31,4 +31,58 @@ Limitations:
 
 Lack of Real-Time Data: Offline models cannot access new or updated information available on the internet.
 Restricted Knowledge Base: They operate only on the dataset they were trained on, requiring periodic retraining to keep them current.
-Step 2: Adoption of a Standardized JSON Format
+
+Step 2: Adoption of a Standardized JSON Format:-
+Code Documentation
+
+The Workflow Generation System implements an automated process for creating standardized JSON workflow configurations using Large Language Models (LLMs). Below is a detailed documentation of the key components and their functionalities:
+
+1. Core Functions
+
+a) generate_workflow()
+Purpose: Creates a structured JSON workflow configuration
+Components:
+- Workflow metadata (name, description)
+- Configuration parameters (OCR settings, email notifications, SLA requirements)
+- Process flow blocks defining the workflow sequence
+Returns: JSON object containing complete workflow structure
+
+b) get_workflow_arguments()
+Purpose: Generates appropriate workflow parameters using AI
+Parameters: workflow_type (string) - Type of workflow to generate
+Process:
+- Utilizes either Mistral or Llama2 LLM for parameter generation
+- Implements fallback mechanism to default settings if AI generation fails
+Returns: Dictionary of workflow arguments
+
+c) create_workflow_from_type()
+Purpose: Coordinates workflow generation process
+Function:
+- Acts as intermediary between argument generation and workflow creation
+- Handles parameter validation and processing
+- Ensures proper workflow structure creation
+
+2. User Interface Components
+
+a) get_user_workflow()
+Purpose: Captures user input for workflow type
+Returns: String containing specified workflow type
+
+b) generate_workflow_from_user_input()
+Purpose: Manages end-to-end workflow generation process
+Process:
+- Obtains workflow type from user
+- Initiates parameter generation
+- Creates workflow structure
+- Saves output to JSON file
+Output: Generates and saves workflow configuration file
+
+3. Performance Metrics
+
+LLM Processing Times:
+- Llama2: Generates JSON output in 1 minute 33 seconds
+- Mistral: Generates JSON output in 2 minute 7 seconds
+
+Both models demonstrate consistent performance in workflow generation tasks.
+
+Note: The system provides robust error handling throughout the process and ensures standardized output formatting for system integration.
