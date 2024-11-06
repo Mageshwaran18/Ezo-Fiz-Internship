@@ -2,86 +2,96 @@ Project Documentation
 Project Title: Automated Generation Workflow Using Large Language Models (LLMs)
 Internship at Ezo Fiz
 By: Mageshwaran P, B.Tech Artificial Intelligence and Data Science (AIDS), 3rd Year
+GitHub Repository: https://github.com/Mageshwaran18/Ezo-Fiz-Internship.git
 
 Problem Statement
+=================
 The goal of this project is to design and implement an automated generation workflow leveraging Large Language Models (LLMs). The workflow aims to utilize offline LLMs for enhanced privacy, security, and cost-effectiveness, while standardizing the output format for consistency and ease of integration with other systems.
 
 Objectives and Approach
-To achieve the project’s goal, the following key steps have been identified:
+======================
+To achieve the project's goal, the following key steps have been identified:
 
 Step 1: Transition to Offline Models
-Overview
+----------------------------------
+Overview:
 This step involves shifting from online LLMs to offline models to address privacy and security concerns. Using offline models helps control data accessibility and ensures that sensitive information is processed securely without external dependencies.
 
-Implementation Details
-Tools: The project utilizes Ollama to install and manage offline models, including Llama2 and Mistral.
+Implementation Details:
+• Tools: The project utilizes Ollama to install and manage offline models, including Llama2 and Mistral.
 
 Ollama is a tool that simplifies the installation, management, and execution of various LLMs in offline settings. Its library of downloadable models allows for efficient experimentation and deployment without needing continuous internet connectivity.
 
 Models:
+-------
+• Llama2: Known for its balanced performance across various natural language processing tasks
+• Mistral: A smaller, resource-efficient model optimized for low-latency applications while maintaining high performance
 
-Llama2: Known for its balanced performance across various natural language processing tasks.
-Mistral: A smaller, resource-efficient model optimized for low-latency applications while maintaining high performance.
 Advantages of Offline Models:
+---------------------------
+• Data Privacy: Offline models prevent sensitive data from leaving the system, reducing the risk of data exposure
+• Enhanced Security: Eliminates the reliance on external networks, minimizing vulnerabilities related to data breaches
+• Cost-Efficiency: Reduces recurring costs associated with cloud-based LLMs and data transfer
 
-Data Privacy: Offline models prevent sensitive data from leaving the system, reducing the risk of data exposure.
-Enhanced Security: Eliminates the reliance on external networks, minimizing vulnerabilities related to data breaches.
-Cost-Efficiency: Reduces recurring costs associated with cloud-based LLMs and data transfer.
 Limitations:
+-----------
+• Lack of Real-Time Data: Offline models cannot access new or updated information available on the internet
+• Restricted Knowledge Base: They operate only on the dataset they were trained on, requiring periodic retraining to keep them current
 
-Lack of Real-Time Data: Offline models cannot access new or updated information available on the internet.
-Restricted Knowledge Base: They operate only on the dataset they were trained on, requiring periodic retraining to keep them current.
-
-Step 2: Adoption of a Standardized JSON Format:-
-Code Documentation
-
+Step 2: Adoption of a Standardized JSON Format
+--------------------------------------------
+Code Documentation:
 The Workflow Generation System implements an automated process for creating standardized JSON workflow configurations using Large Language Models (LLMs). Below is a detailed documentation of the key components and their functionalities:
 
-1. Core Functions
+Reference:
+---------
+• How to access Ollama in jupyter notebook: https://github.com/RamiKrispin/ollama-poc/blob/main/ollama-poc.ipynb
 
+1. Core Functions
+----------------
 a) generate_workflow()
-Purpose: Creates a structured JSON workflow configuration
-Components:
-- Workflow metadata (name, description)
-- Configuration parameters (OCR settings, email notifications, SLA requirements)
-- Process flow blocks defining the workflow sequence
-Returns: JSON object containing complete workflow structure
+    Purpose: Creates a structured JSON workflow configuration
+    Components:
+    • Workflow metadata (name, description)
+    • Configuration parameters (OCR settings, email notifications, SLA requirements)
+    • Process flow blocks defining the workflow sequence
+    Returns: JSON object containing complete workflow structure
 
 b) get_workflow_arguments()
-Purpose: Generates appropriate workflow parameters using AI
-Parameters: workflow_type (string) - Type of workflow to generate
-Process:
-- Utilizes either Mistral or Llama2 LLM for parameter generation
-- Implements fallback mechanism to default settings if AI generation fails
-Returns: Dictionary of workflow arguments
+    Purpose: Generates appropriate workflow parameters using AI
+    Parameters: workflow_type (string) - Type of workflow to generate
+    Process:
+    • Utilizes either Mistral or Llama2 LLM for parameter generation
+    • Implements fallback mechanism to default settings if AI generation fails
+    Returns: Dictionary of workflow arguments
 
 c) create_workflow_from_type()
-Purpose: Coordinates workflow generation process
-Function:
-- Acts as intermediary between argument generation and workflow creation
-- Handles parameter validation and processing
-- Ensures proper workflow structure creation
+    Purpose: Coordinates workflow generation process
+    Function:
+    • Acts as intermediary between argument generation and workflow creation
+    • Handles parameter validation and processing
+    • Ensures proper workflow structure creation
 
 2. User Interface Components
-
+---------------------------
 a) get_user_workflow()
-Purpose: Captures user input for workflow type
-Returns: String containing specified workflow type
+    Purpose: Captures user input for workflow type
+    Returns: String containing specified workflow type
 
 b) generate_workflow_from_user_input()
-Purpose: Manages end-to-end workflow generation process
-Process:
-- Obtains workflow type from user
-- Initiates parameter generation
-- Creates workflow structure
-- Saves output to JSON file
-Output: Generates and saves workflow configuration file
+    Purpose: Manages end-to-end workflow generation process
+    Process:
+    • Obtains workflow type from user
+    • Initiates parameter generation
+    • Creates workflow structure
+    • Saves output to JSON file
+    Output: Generates and saves workflow configuration file
 
 3. Performance Metrics
-
+---------------------
 LLM Processing Times:
-- Llama2: Generates JSON output in 1 minute 33 seconds
-- Mistral: Generates JSON output in 2 minute 7 seconds
+• Llama2: Generates JSON output in 1 minute 33 seconds
+• Mistral: Generates JSON output in 2 minute 7 seconds
 
 Both models demonstrate consistent performance in workflow generation tasks.
 

@@ -1,0 +1,107 @@
+{
+    "name": "Expense Reimbursement Process",
+    "description": "A workflow to facilitate the submission, approval and reimbursement of employee expenses.",
+    "initiateUsing": {
+        "type": "FORM",
+        "repositoryId": 0,
+        "formId": 1234
+    },
+    "ocr": false,
+    "processNumberPrefix": ["ER-"],
+    "linkMasterFormId": 5678,
+    "smtpEmailId": 9012,
+    "coordinator": [
+        "john.doe@example.com",
+        "jane.smith@example.com"
+    ],
+    "superuser": ["admin@example.com"],
+    "slaSettings": {
+        "workDays": [],
+        "workHours": {
+            "from": "",
+            "to": ""
+        },
+        "timeZone": "",
+        "slaType": "STANDARD",
+        "slaMasterFormId": 0,
+        "workflowFormSLAFieldId": "",
+        "emailNotify": true,
+        "smsNotify": false
+    },
+    "kanbanSettings": [],
+    "scheduleReport": {
+        "durationType": "Week",
+        "duration": "",
+        "time": "",
+        "notifyTo": [],
+        "runningRequest": false,
+        "completedRequest": false
+    },
+    "publish": {
+        "publishOption": "PUBLISHED",
+        "publishSchedule": "",
+        "unpublishSchedule": ""
+    },
+    "blockStatus": 1,
+    "mlPredictions": [],
+    "hasSLASettings": true,
+    "initiateUserDomain": [],
+    "modifiedBlockIds": [],
+    "workflowBlocks": [
+        {
+            "id": "start",
+            "left": 50,
+            "top": 50,
+            "fromBlockId": null,
+            "toBlockId": "employee_submit",
+            "proceedAction": "Approve",
+            "remarks": "false",
+            "passwordAccess": "False",
+            "confirm": "False"
+        },
+        {
+            "id": "employee_submit",
+            "left": 50,
+            "top": 150,
+            "fromBlockId": "start",
+            "toBlockId": "manager_approval",
+            "proceedAction": "Approve",
+            "remarks": "true",
+            "passwordAccess": "False",
+            "confirm": "False"
+        },
+        {
+            "id": "manager_approval",
+            "left": 50,
+            "top": 250,
+            "fromBlockId": "employee_submit",
+            "toBlockId": "finance_approval",
+            "proceedAction": "Approve",
+            "remarks": "true",
+            "passwordAccess": "False",
+            "confirm": "False"
+        },
+        {
+            "id": "finance_approval",
+            "left": 50,
+            "top": 350,
+            "fromBlockId": "manager_approval",
+            "toBlockId": "reimbursement",
+            "proceedAction": "Approve",
+            "remarks": "true",
+            "passwordAccess": "False",
+            "confirm": "False"
+        },
+        {
+            "id": "reimbursement",
+            "left": 50,
+            "top": 450,
+            "fromBlockId": "finance_approval",
+            "toBlockId": null,
+            "proceedAction": "Approve",
+            "remarks": "false",
+            "passwordAccess": "False",
+            "confirm": "False"
+        }
+    ]
+}

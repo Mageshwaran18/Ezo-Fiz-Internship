@@ -1,0 +1,60 @@
+{
+    "name": "New Vendor Onboarding Workflow",
+    "description": "Standard New Vendor Onboarding process workflow",
+    "initiateUsing": {
+        "type": "FORM",
+        "repositoryId": 0,
+        "formId": 1
+    },
+    "ocr": false,
+    "processNumberPrefix": ["WF"],
+    "linkMasterFormId": 1,
+    "smtpEmailId": 1,
+    "coordinator": [],
+    "superuser": [],
+    "slaSettings": {
+        "workDays": [],
+        "workHours": {
+            "from": "",
+            "to": ""
+        },
+        "timeZone": "",
+        "slaType": "STANDARD",
+        "slaMasterFormId": 0,
+        "workflowFormSLAFieldId": "",
+        "emailNotify": true,
+        "smsNotify": false
+    },
+    "kanbanSettings": [],
+    "scheduleReport": {
+        "durationType": "Week",
+        "duration": "",
+        "time": "",
+        "notifyTo": [],
+        "runningRequest": false,
+        "completedRequest": false
+    },
+    "publish": {
+        "publishOption": "PUBLISHED",
+        "publishSchedule": "",
+        "unpublishSchedule": ""
+    },
+    "blockStatus": 1,
+    "mlPredictions": [],
+    "hasSLASettings": true,
+    "initiateUserDomain": [],
+    "modifiedBlockIds": [],
+    "workflowBlocks": [
+        {
+            "id": "start",
+            "left": 100,
+            "top": 100,
+            "fromBlockId": "start",
+            "toBlockId": "end",
+            "proceedAction": "Approve",
+            "remarks": "true",
+            "passwordAccess": "False",
+            "confirm": "True"
+        }
+    ]
+}
