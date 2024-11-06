@@ -1,0 +1,99 @@
+Workflow Example 1: Leave Approval Process
+Process Start: Initiated through Form ID 5123.
+
+Settings:
+
+OCR settings: Not required.
+Process number prefix: "LEAVE-".
+Workflow Blocks:
+
+Block 1 (AA123b9cQk3FY): Initial review by HR. Status: "Satisfied" with no remarks, password, or confirmation needed.
+Block 2 (BB789c4cYk1GZ): Manager review. Approve or reject without remarks. If approved, moves to next block. If rejected, process ends here.
+Block 3 (CC456h7vZn2LX): Final decision by Department Head.
+Approve action without remarks; if approved, the next block is "DD843m2nKx6HV" (Notification to Employee).
+Reject action requires a remark and ends the process.
+SLAs: None defined.
+
+Status: Published and active for Form ID 5123.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Workflow Example 2: Expense Reimbursement Process
+Process Start: Triggered by Form ID 7821.
+
+Settings:
+
+OCR settings: Enabled for scanning receipts.
+Process number prefix: "EXP-".
+Workflow Blocks:
+
+Block 1 (EXP101-aBx5Cz): Initial validation by Accounts team. Approval is required to proceed.
+Block 2 (EXP202-bQn6Ds): Manager review. If approved, moves to Block 3; if rejected, sends a remark back to the employee.
+Block 3 (EXP303-cRe7Ff): Final approval by Finance Head with a mandatory remark if rejected. Approved requests move to "EXP404-dTy8Hg" (Payout Process).
+Block 4 (EXP404-dTy8Hg): If approved, the reimbursement is processed. The workflow ends here.
+SLAs: 48-hour SLA per approval block.
+
+Status: Published and ready for use with Form ID 7821.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Workflow Example 3: New Vendor Onboarding
+Process Start: Initiated via Form ID 2045.
+
+Settings:
+
+OCR settings: Enabled for document verification.
+Process number prefix: "VEND-".
+Workflow Blocks:
+
+Block 1 (NV101-QaW3xZ): Compliance check. "Satisfied" status required; no password or confirmation needed. If compliance fails, process ends with a remark.
+Block 2 (NV202-TbE4yY): Legal review. Approval moves the process to Block 3; rejection ends the process with remarks.
+Block 3 (NV303-UcR5zZ): Finance review. Requires approval to proceed; rejections end the process.
+Block 4 (NV404-VdT6xX): Approval by Department Head.
+Approve moves to "NV505-NotifyTeam" (Notification).
+Reject ends the workflow with remarks.
+SLAs: Compliance and Finance review have a 72-hour SLA.
+
+Status: Workflow is published and live under Form ID 2045.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Workflow Example 4: IT Asset Request
+Process Start: Initiated with Form ID 6300.
+
+Settings:
+
+OCR settings: Not required.
+Process number prefix: "ITREQ-".
+Workflow Blocks:
+
+Block 1 (ITR-Aa1): Supervisor Review. Approve or reject with remarks. Rejection ends process; approval moves to next block.
+Block 2 (ITR-Bb2): IT Review. Confirmation needed to move forward. Approval moves to Block 3; rejection ends process with remarks.
+Block 3 (ITR-Cc3): Approval from IT Asset Manager. Approved requests are processed in "ITR-Dd4" (Asset Allocation), and rejection ends the process with remarks.
+Block 4 (ITR-Dd4): Asset allocation and handover confirmation. The workflow ends here.
+SLAs: None specified.
+
+Status: Published and available under Form ID 6300.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Workflow Example 5: Purchase Order Workflow
+Process Start: Initiated with Form ID 3168.
+
+Settings:
+
+OCR settings: Not required.
+Process number prefix: "REQ-".
+Workflow Blocks:
+
+Block 1 (YP8j6QSB4Ui3swHeZBieE): Satisfied status. No remarks, password access, or confirmation needed.
+Block 2 (YJj5w-IfjknLvdivGoQ5k): Satisfied status. No remarks, password access, or confirmation needed.
+Block 3 (Nfcsn0OkSv6YOMqzz7-dC -> vi5ftttz9MBW7dxMqr0wY): Approve action with no remarks. If approved, the next block is "aeQ-j3spkxULeSt0vxFDI" (Reject) or "4ftTWm9IOgv1IrSTt4GiN" (Approve).
+Block 4 (aeQ-j3spkxULeSt0vxFDI): Reject action with a remark. If rejected, the process ends here.
+Block 5 (aTPO4WMjSAQlRvpekpPfb): Reject action with a remark. If rejected, the process ends here.
+Block 6 (VE1pYukqJg8epqkvndARk): Approve action without remarks. If approved, the process ends here.
+SLAs: None specified.
+
+Status: Published and available under Form ID 3168
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

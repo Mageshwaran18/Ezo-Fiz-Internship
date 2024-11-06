@@ -1,0 +1,34 @@
+Project Documentation
+Project Title: Automated Generation Workflow Using Large Language Models (LLMs)
+Internship at Ezo Fiz
+By: Mageshwaran P, B.Tech Artificial Intelligence and Data Science (AIDS), 3rd Year
+
+Problem Statement
+The goal of this project is to design and implement an automated generation workflow leveraging Large Language Models (LLMs). The workflow aims to utilize offline LLMs for enhanced privacy, security, and cost-effectiveness, while standardizing the output format for consistency and ease of integration with other systems.
+
+Objectives and Approach
+To achieve the project’s goal, the following key steps have been identified:
+
+Step 1: Transition to Offline Models
+Overview
+This step involves shifting from online LLMs to offline models to address privacy and security concerns. Using offline models helps control data accessibility and ensures that sensitive information is processed securely without external dependencies.
+
+Implementation Details
+Tools: The project utilizes Ollama to install and manage offline models, including Llama2 and Mistral.
+
+Ollama is a tool that simplifies the installation, management, and execution of various LLMs in offline settings. Its library of downloadable models allows for efficient experimentation and deployment without needing continuous internet connectivity.
+
+Models:
+
+Llama2: Known for its balanced performance across various natural language processing tasks.
+Mistral: A smaller, resource-efficient model optimized for low-latency applications while maintaining high performance.
+Advantages of Offline Models:
+
+Data Privacy: Offline models prevent sensitive data from leaving the system, reducing the risk of data exposure.
+Enhanced Security: Eliminates the reliance on external networks, minimizing vulnerabilities related to data breaches.
+Cost-Efficiency: Reduces recurring costs associated with cloud-based LLMs and data transfer.
+Limitations:
+
+Lack of Real-Time Data: Offline models cannot access new or updated information available on the internet.
+Restricted Knowledge Base: They operate only on the dataset they were trained on, requiring periodic retraining to keep them current.
+Step 2: Adoption of a Standardized JSON Format
